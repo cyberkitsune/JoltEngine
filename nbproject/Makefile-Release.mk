@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/JoltApp.o \
 	${OBJECTDIR}/JoltEvent.o \
 	${OBJECTDIR}/JoltInit.o \
+	${OBJECTDIR}/JoltDataFile.o \
 	${OBJECTDIR}/JoltConsole.o
 
 
@@ -79,6 +80,11 @@ ${OBJECTDIR}/JoltInit.o: JoltInit.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltInit.o JoltInit.cpp
+
+${OBJECTDIR}/JoltDataFile.o: JoltDataFile.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltDataFile.o JoltDataFile.cpp
 
 ${OBJECTDIR}/JoltConsole.o: JoltConsole.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>JoltApp.h</itemPath>
       <itemPath>JoltConsole.h</itemPath>
+      <itemPath>JoltDataFile.h</itemPath>
       <itemPath>SDLStuff.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -17,6 +18,7 @@
                    projectFiles="true">
       <itemPath>JoltApp.cpp</itemPath>
       <itemPath>JoltConsole.cpp</itemPath>
+      <itemPath>JoltDataFile.cpp</itemPath>
       <itemPath>JoltEvent.cpp</itemPath>
       <itemPath>JoltInit.cpp</itemPath>
     </logicalFolder>

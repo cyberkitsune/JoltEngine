@@ -13,6 +13,9 @@
 class JoltDataFile {
 public:
     JoltDataFile(const char* filename);
+    int getInt(const char* prop);
+    char* getString(const char* prop);
+    bool getBoolean(const char* prop);
     virtual ~JoltDataFile();
 private:
     std::fstream file;
