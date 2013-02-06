@@ -17,6 +17,7 @@ public:
     static SDL_Surface* loadImage(char* file);
     static bool doDraw(SDL_Surface* sDest, SDL_Surface* sSrc, int x, int y);
     static bool doDraw(SDL_Surface* sDest, SDL_Surface* sSrc, int x, int y, int x2, int y2, int w, int h); //For multipart surfaces
+    static bool transparent(SDL_Surface* sDst, int R, int G, int B);
 
 };
 

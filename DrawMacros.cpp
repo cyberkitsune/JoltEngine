@@ -60,3 +60,13 @@ bool DrawMacros::doDraw(SDL_Surface* sDest, SDL_Surface* sSrc, int x, int y, int
     
     return true;
 }
+
+bool DrawMacros::transparent(SDL_Surface* sDst, int R, int G, int B) {
+    if(sDst == NULL) {
+        return false;
+    }
+    
+    SDL_SetColorKey(sDst, SDL_SRCCOLORKEY | SDL_RLEACCEL, SDL_MapRGB(sDst->format,R,G,B));
+    
+    return true;
+}
