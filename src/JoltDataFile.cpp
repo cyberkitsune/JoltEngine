@@ -6,25 +6,28 @@
  */
 
 #include "JoltDataFile.h"
+#include "JoltConsole.h"
+#include <algorithm>
 #include <stdlib.h>
 
 using namespace std;
 
 JoltDataFile::JoltDataFile(const char* filename) {
     file.open(filename, std::ios::in);
+    
+    if(file.fail()) {
+        JoltConsole::logInfo("File","Failed file %s!", filename);
+    }
+    
+    if(file.bad()) {
+        JoltConsole::logInfo("File","Bad file %s!", filename);
+    }
 }
 
-string choppa(const string &t, const string &ws)
+string delSpaces(string &str) 
 {
-    string str = t;
-    size_t found;
-    found = str.find_last_not_of(ws);
-    if (found != string::npos)
-    	str.erase(found+1);
-    else
-    	str.clear();            
-
-    return str;
+   str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
+   return str;
 }
 
 int JoltDataFile::getInt(const char* prop) {
@@ -33,8 +36,8 @@ int JoltDataFile::getInt(const char* prop) {
     std::string str;
     while(std::getline(file,str)) {
         if(str.find_first_of("=") != std::string::npos) {
-            string whiteSpace = choppa(str," ");
-            return atoi(whiteSpace.substr(whiteSpace.find_first_of("=")).c_str());
+            string whiteSpace = delSpaces(str);
+            return atoi(whiteSpace.substr(whiteSpace.find_first_of("=")+1).c_str());
         }
     }
     return -1; //We didn't find a value.
