@@ -35,12 +35,15 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/DrawMacros.o \
 	${OBJECTDIR}/JoltApp.o \
+	${OBJECTDIR}/JoltAnimation.o \
 	${OBJECTDIR}/JoltEvent.o \
 	${OBJECTDIR}/JoltInit.o \
 	${OBJECTDIR}/JoltDataFile.o \
 	${OBJECTDIR}/JoltConsole.o \
-	${OBJECTDIR}/JoltCleanup.o
+	${OBJECTDIR}/JoltCleanup.o \
+	${OBJECTDIR}/JoltEntity.o
 
 
 # C Compiler Flags
@@ -67,10 +70,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joltengine: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joltengine ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/DrawMacros.o: DrawMacros.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/DrawMacros.o DrawMacros.cpp
+
 ${OBJECTDIR}/JoltApp.o: JoltApp.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltApp.o JoltApp.cpp
+
+${OBJECTDIR}/JoltAnimation.o: JoltAnimation.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltAnimation.o JoltAnimation.cpp
 
 ${OBJECTDIR}/JoltEvent.o: JoltEvent.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -96,6 +109,11 @@ ${OBJECTDIR}/JoltCleanup.o: JoltCleanup.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltCleanup.o JoltCleanup.cpp
+
+${OBJECTDIR}/JoltEntity.o: JoltEntity.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltEntity.o JoltEntity.cpp
 
 # Subprojects
 .build-subprojects:

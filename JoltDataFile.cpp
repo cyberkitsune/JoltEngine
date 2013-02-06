@@ -37,7 +37,7 @@ int JoltDataFile::getInt(const char* prop) {
             return atoi(whiteSpace.substr(whiteSpace.find_first_of("=")).c_str());
         }
     }
-    return NULL; //We didn't find a value.
+    return -1; //We didn't find a value.
 }
 
 JoltDataFile::~JoltDataFile() {
