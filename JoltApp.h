@@ -9,6 +9,7 @@
 #define	JOLTAPP_H
 
 #include "SDLStuff.h"
+#include "JoltEntity.h"
 
 class JoltApp {
 public:

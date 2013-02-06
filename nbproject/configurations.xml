@@ -26,6 +26,7 @@
         <itemPath>DrawMacros.cpp</itemPath>
         <itemPath>JoltAnimation.cpp</itemPath>
         <itemPath>JoltEntity.cpp</itemPath>
+        <itemPath>JoltRender.cpp</itemPath>
       </logicalFolder>
       <itemPath>JoltApp.cpp</itemPath>
       <itemPath>JoltCleanup.cpp</itemPath>
@@ -33,6 +34,7 @@
       <itemPath>JoltDataFile.cpp</itemPath>
       <itemPath>JoltEvent.cpp</itemPath>
       <itemPath>JoltInit.cpp</itemPath>
+      <itemPath>JoltLoop.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"

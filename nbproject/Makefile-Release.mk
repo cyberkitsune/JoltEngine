@@ -40,7 +40,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/JoltAnimation.o \
 	${OBJECTDIR}/JoltEvent.o \
 	${OBJECTDIR}/JoltInit.o \
+	${OBJECTDIR}/JoltLoop.o \
 	${OBJECTDIR}/JoltDataFile.o \
+	${OBJECTDIR}/JoltRender.o \
 	${OBJECTDIR}/JoltConsole.o \
 	${OBJECTDIR}/JoltCleanup.o \
 	${OBJECTDIR}/JoltEntity.o
@@ -95,10 +97,20 @@ ${OBJECTDIR}/JoltInit.o: JoltInit.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltInit.o JoltInit.cpp
 
+${OBJECTDIR}/JoltLoop.o: JoltLoop.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltLoop.o JoltLoop.cpp
+
 ${OBJECTDIR}/JoltDataFile.o: JoltDataFile.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltDataFile.o JoltDataFile.cpp
+
+${OBJECTDIR}/JoltRender.o: JoltRender.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltRender.o JoltRender.cpp
 
 ${OBJECTDIR}/JoltConsole.o: JoltConsole.cpp 
 	${MKDIR} -p ${OBJECTDIR}
