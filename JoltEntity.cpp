@@ -7,6 +7,8 @@
 
 #include "JoltEntity.h"
 
+std::vector<JoltEntity*> JoltEntity::entList;
+
 JoltEntity::JoltEntity() {
     
     sEntity = NULL;
