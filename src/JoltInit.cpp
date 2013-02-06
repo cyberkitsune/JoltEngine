@@ -1,5 +1,6 @@
 #include "JoltApp.h"
 #include "JoltConsole.h"
+#include "JoltDataFile.h"
 #include <stdlib.h>
 
 /**
@@ -19,6 +20,7 @@ bool JoltApp::doInit() {
         return false;
     }
     JoltConsole::logInfo("Init", "Screen initilized.");
+    SDL_WM_SetCaption("A Jolt Engine Application",NULL);
     
     int numResources = 0;
     JoltConsole::logInfo("Init", "Begin resource loading. Going to load %i resources", numResources);
