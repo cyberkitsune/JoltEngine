@@ -17,6 +17,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>JoltApp.cpp</itemPath>
+      <itemPath>JoltCleanup.cpp</itemPath>
       <itemPath>JoltConsole.cpp</itemPath>
       <itemPath>JoltDataFile.cpp</itemPath>
       <itemPath>JoltEvent.cpp</itemPath>

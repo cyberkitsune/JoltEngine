@@ -22,7 +22,7 @@ public:
     void onEvent(SDL_Event* evt);
     void onLoop();
     void onRender();
-    void onCleanup();
+    void doCleanup();
 };
 
 #endif	/* JOLTAPP_H */

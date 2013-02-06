@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 /**
- Init Script
- 
+ * Init Script
+ * 
  */
 bool JoltApp::doInit() {
     JoltConsole::logInfo("Init", "Init started.");

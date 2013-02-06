@@ -10,6 +10,7 @@
 #include "JoltConsole.h"
 
 JoltApp::JoltApp() {
+    display = NULL;
     running = true;
 }
 
@@ -31,9 +32,8 @@ int JoltApp::doExecute() {
 //        onRender();
     }
     
-//    onCleanup();
+    doCleanup();
     
-    SDL_Quit();
     return 0;
     
 }

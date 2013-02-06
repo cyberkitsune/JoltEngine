@@ -39,7 +39,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/JoltEvent.o \
 	${OBJECTDIR}/JoltInit.o \
 	${OBJECTDIR}/JoltDataFile.o \
-	${OBJECTDIR}/JoltConsole.o
+	${OBJECTDIR}/JoltConsole.o \
+	${OBJECTDIR}/JoltCleanup.o
 
 
 # C Compiler Flags
@@ -90,6 +91,11 @@ ${OBJECTDIR}/JoltConsole.o: JoltConsole.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltConsole.o JoltConsole.cpp
+
+${OBJECTDIR}/JoltCleanup.o: JoltCleanup.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltCleanup.o JoltCleanup.cpp
 
 # Subprojects
 .build-subprojects:
