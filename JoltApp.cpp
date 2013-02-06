@@ -28,8 +28,10 @@ int JoltApp::doExecute() {
             onEvent(&evt);
         }
         
-//        onLoop();
-//        onRender();
+        onLoop();
+        onRender();
+        
+        //TODO: Simple framerate stuff.
     }
     
     doCleanup();
