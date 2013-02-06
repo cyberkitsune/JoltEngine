@@ -5,14 +5,14 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="gfx" projectFiles="true">
-        <itemPath>DrawMacros.h</itemPath>
-        <itemPath>JoltAnimation.h</itemPath>
-        <itemPath>JoltEntity.h</itemPath>
+        <itemPath>src/DrawMacros.h</itemPath>
+        <itemPath>src/JoltAnimation.h</itemPath>
+        <itemPath>src/JoltEntity.h</itemPath>
       </logicalFolder>
-      <itemPath>JoltApp.h</itemPath>
-      <itemPath>JoltConsole.h</itemPath>
-      <itemPath>JoltDataFile.h</itemPath>
-      <itemPath>SDLStuff.h</itemPath>
+      <itemPath>src/JoltApp.h</itemPath>
+      <itemPath>src/JoltConsole.h</itemPath>
+      <itemPath>src/JoltDataFile.h</itemPath>
+      <itemPath>src/SDLStuff.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -23,18 +23,18 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="gfx" projectFiles="true">
-        <itemPath>DrawMacros.cpp</itemPath>
-        <itemPath>JoltAnimation.cpp</itemPath>
-        <itemPath>JoltEntity.cpp</itemPath>
-        <itemPath>JoltRender.cpp</itemPath>
+        <itemPath>src/DrawMacros.cpp</itemPath>
+        <itemPath>src/JoltAnimation.cpp</itemPath>
+        <itemPath>src/JoltEntity.cpp</itemPath>
+        <itemPath>src/JoltRender.cpp</itemPath>
       </logicalFolder>
-      <itemPath>JoltApp.cpp</itemPath>
-      <itemPath>JoltCleanup.cpp</itemPath>
-      <itemPath>JoltConsole.cpp</itemPath>
-      <itemPath>JoltDataFile.cpp</itemPath>
-      <itemPath>JoltEvent.cpp</itemPath>
-      <itemPath>JoltInit.cpp</itemPath>
-      <itemPath>JoltLoop.cpp</itemPath>
+      <itemPath>src/JoltApp.cpp</itemPath>
+      <itemPath>src/JoltCleanup.cpp</itemPath>
+      <itemPath>src/JoltConsole.cpp</itemPath>
+      <itemPath>src/JoltDataFile.cpp</itemPath>
+      <itemPath>src/JoltEvent.cpp</itemPath>
+      <itemPath>src/JoltInit.cpp</itemPath>
+      <itemPath>src/JoltLoop.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"

@@ -35,17 +35,17 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/DrawMacros.o \
-	${OBJECTDIR}/JoltApp.o \
-	${OBJECTDIR}/JoltAnimation.o \
-	${OBJECTDIR}/JoltEvent.o \
-	${OBJECTDIR}/JoltInit.o \
-	${OBJECTDIR}/JoltLoop.o \
-	${OBJECTDIR}/JoltDataFile.o \
-	${OBJECTDIR}/JoltRender.o \
-	${OBJECTDIR}/JoltConsole.o \
-	${OBJECTDIR}/JoltCleanup.o \
-	${OBJECTDIR}/JoltEntity.o
+	${OBJECTDIR}/src/JoltRender.o \
+	${OBJECTDIR}/src/JoltLoop.o \
+	${OBJECTDIR}/src/JoltCleanup.o \
+	${OBJECTDIR}/src/DrawMacros.o \
+	${OBJECTDIR}/src/JoltDataFile.o \
+	${OBJECTDIR}/src/JoltApp.o \
+	${OBJECTDIR}/src/JoltInit.o \
+	${OBJECTDIR}/src/JoltAnimation.o \
+	${OBJECTDIR}/src/JoltEvent.o \
+	${OBJECTDIR}/src/JoltConsole.o \
+	${OBJECTDIR}/src/JoltEntity.o
 
 
 # C Compiler Flags
@@ -72,60 +72,60 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joltengine: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joltengine ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/DrawMacros.o: DrawMacros.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltRender.o: src/JoltRender.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/DrawMacros.o DrawMacros.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltRender.o src/JoltRender.cpp
 
-${OBJECTDIR}/JoltApp.o: JoltApp.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltLoop.o: src/JoltLoop.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltApp.o JoltApp.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltLoop.o src/JoltLoop.cpp
 
-${OBJECTDIR}/JoltAnimation.o: JoltAnimation.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltCleanup.o: src/JoltCleanup.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltAnimation.o JoltAnimation.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltCleanup.o src/JoltCleanup.cpp
 
-${OBJECTDIR}/JoltEvent.o: JoltEvent.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/DrawMacros.o: src/DrawMacros.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltEvent.o JoltEvent.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/DrawMacros.o src/DrawMacros.cpp
 
-${OBJECTDIR}/JoltInit.o: JoltInit.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltDataFile.o: src/JoltDataFile.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltInit.o JoltInit.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltDataFile.o src/JoltDataFile.cpp
 
-${OBJECTDIR}/JoltLoop.o: JoltLoop.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltApp.o: src/JoltApp.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltLoop.o JoltLoop.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltApp.o src/JoltApp.cpp
 
-${OBJECTDIR}/JoltDataFile.o: JoltDataFile.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltInit.o: src/JoltInit.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltDataFile.o JoltDataFile.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltInit.o src/JoltInit.cpp
 
-${OBJECTDIR}/JoltRender.o: JoltRender.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltAnimation.o: src/JoltAnimation.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltRender.o JoltRender.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltAnimation.o src/JoltAnimation.cpp
 
-${OBJECTDIR}/JoltConsole.o: JoltConsole.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltEvent.o: src/JoltEvent.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltConsole.o JoltConsole.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltEvent.o src/JoltEvent.cpp
 
-${OBJECTDIR}/JoltCleanup.o: JoltCleanup.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltConsole.o: src/JoltConsole.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltCleanup.o JoltCleanup.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltConsole.o src/JoltConsole.cpp
 
-${OBJECTDIR}/JoltEntity.o: JoltEntity.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/JoltEntity.o: src/JoltEntity.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/JoltEntity.o JoltEntity.cpp
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltEntity.o src/JoltEntity.cpp
 
 # Subprojects
 .build-subprojects:
