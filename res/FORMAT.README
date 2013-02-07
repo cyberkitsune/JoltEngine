@@ -1,4 +1,5 @@
 === MAP FORMATS ===
+<NOTE ON TILESETS> My app implies you have 16x16 tiles the moment in a straight line, with the first slot being tile 0. 
 ==Zone (*.zone)==
 
 ./path/to/tileset.png
