@@ -1,6 +1,7 @@
 #include "JoltApp.h"
 #include "JoltConsole.h"
 #include "JoltDataFile.h"
+#include "defines.h"
 #include <stdlib.h>
 
 /**
@@ -15,7 +16,7 @@ bool JoltApp::doInit() {
     }
     JoltConsole::logInfo("Init", "SDL Init Complete");
     
-    if((display = SDL_SetVideoMode(1280, 720, 32, SDL_HWSURFACE | SDL_DOUBLEBUF)) == NULL) {
+    if((display = SDL_SetVideoMode(WWIDTH, WHEIGHT, 32, SDL_HWSURFACE | SDL_DOUBLEBUF)) == NULL) {
         JoltConsole::logInfo("Init", "Unable to create screen!");
         return false;
     }
