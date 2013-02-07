@@ -89,3 +89,11 @@ void JoltZone::onRender(SDL_Surface* sDisplay, int camX, int camY) {
     }
 
 }
+
+void JoltZone::onCleanup() {
+    if(sTileset) {
+        SDL_FreeSurface(sTileset);
+    }
+    
+    maps.clear();
+}
