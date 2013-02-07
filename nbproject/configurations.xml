@@ -10,6 +10,7 @@
         <itemPath>src/JoltEntity.h</itemPath>
       </logicalFolder>
       <itemPath>src/JoltApp.h</itemPath>
+      <itemPath>src/JoltCamera.h</itemPath>
       <itemPath>src/JoltConsole.h</itemPath>
       <itemPath>src/JoltDataFile.h</itemPath>
       <itemPath>src/JoltMap.h</itemPath>
@@ -33,6 +34,7 @@
         <itemPath>src/JoltRender.cpp</itemPath>
       </logicalFolder>
       <itemPath>src/JoltApp.cpp</itemPath>
+      <itemPath>src/JoltCamera.cpp</itemPath>
       <itemPath>src/JoltCleanup.cpp</itemPath>
       <itemPath>src/JoltConsole.cpp</itemPath>
       <itemPath>src/JoltDataFile.cpp</itemPath>

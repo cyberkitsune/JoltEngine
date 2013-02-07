@@ -1,5 +1,6 @@
 #include "JoltApp.h"
 #include "JoltConsole.h"
+#include "JoltZone.h"
 
 void JoltApp::doCleanup() {
     
@@ -12,6 +13,9 @@ void JoltApp::doCleanup() {
         JoltEntity::entList[i]->onCleanup();
     }
     JoltConsole::logInfo("Cleanup", "Entities all clean :3");
+    JoltConsole::logInfo("Cleanup", "Cleaning maps and zones...");
+    JoltZone::zoneControl.onCleanup();
+    JoltConsole::logInfo("Cleanup", "Maps and Zones clean.");
     
     JoltConsole::logInfo("Init", "Cleanup complete.");
     

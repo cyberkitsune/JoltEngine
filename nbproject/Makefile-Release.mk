@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/JoltCamera.o \
 	${OBJECTDIR}/src/JoltRender.o \
 	${OBJECTDIR}/src/JoltLoop.o \
 	${OBJECTDIR}/src/JoltCleanup.o \
@@ -74,6 +75,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joltengine: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joltengine ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/src/JoltCamera.o: src/JoltCamera.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltCamera.o src/JoltCamera.cpp
 
 ${OBJECTDIR}/src/JoltRender.o: src/JoltRender.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
