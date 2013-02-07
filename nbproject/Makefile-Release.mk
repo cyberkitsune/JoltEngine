@@ -43,6 +43,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/JoltApp.o \
 	${OBJECTDIR}/src/JoltInit.o \
 	${OBJECTDIR}/src/JoltAnimation.o \
+	${OBJECTDIR}/src/JoltMap.o \
+	${OBJECTDIR}/src/JoltTile.o \
 	${OBJECTDIR}/src/JoltEvent.o \
 	${OBJECTDIR}/src/JoltConsole.o \
 	${OBJECTDIR}/src/JoltEntity.o
@@ -111,6 +113,16 @@ ${OBJECTDIR}/src/JoltAnimation.o: src/JoltAnimation.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltAnimation.o src/JoltAnimation.cpp
+
+${OBJECTDIR}/src/JoltMap.o: src/JoltMap.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltMap.o src/JoltMap.cpp
+
+${OBJECTDIR}/src/JoltTile.o: src/JoltTile.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltTile.o src/JoltTile.cpp
 
 ${OBJECTDIR}/src/JoltEvent.o: src/JoltEvent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

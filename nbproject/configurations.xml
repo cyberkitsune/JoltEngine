@@ -12,7 +12,10 @@
       <itemPath>src/JoltApp.h</itemPath>
       <itemPath>src/JoltConsole.h</itemPath>
       <itemPath>src/JoltDataFile.h</itemPath>
+      <itemPath>src/JoltMap.h</itemPath>
+      <itemPath>src/JoltTile.h</itemPath>
       <itemPath>src/SDLStuff.h</itemPath>
+      <itemPath>src/defines.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -35,6 +38,8 @@
       <itemPath>src/JoltEvent.cpp</itemPath>
       <itemPath>src/JoltInit.cpp</itemPath>
       <itemPath>src/JoltLoop.cpp</itemPath>
+      <itemPath>src/JoltMap.cpp</itemPath>
+      <itemPath>src/JoltTile.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"

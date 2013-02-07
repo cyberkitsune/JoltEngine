@@ -9,6 +9,7 @@
 #define	JOLTMAP_H
 
 #include "JoltTile.h"
+#include "SDLStuff.h"
 
 
 class JoltMap {
