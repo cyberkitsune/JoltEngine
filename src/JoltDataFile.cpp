@@ -47,7 +47,7 @@ int JoltDataFile::getInt(const char* prop) {
     return -1; //We didn't find a value.
 }
 
-const char* JoltDataFile::getString(const char* prop) {
+std::string JoltDataFile::getString(const char* prop) {
     file.seekg(0, ios::beg); //Make sure we're ready to read it from the top.
 
     std::string str;
@@ -57,9 +57,8 @@ const char* JoltDataFile::getString(const char* prop) {
              if (str.find_first_of("=") != std::string::npos) {
                  printf("%s\n",str.c_str());
                  int posToDo = str.find_first_of('"') + 1;
-                 int size = str.size();
-                 std::string afterMath = str.substr(posToDo);
-                return afterMath.c_str();
+                 std::string afterMath = str.substr(posToDo, (str.length() - posToDo - 1));
+                return afterMath;
             }
         }
     }
