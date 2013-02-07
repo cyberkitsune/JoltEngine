@@ -2,6 +2,7 @@
 #include "JoltConsole.h"
 #include "JoltDataFile.h"
 #include "defines.h"
+#include "JoltZone.h"
 #include <stdlib.h>
 
 /**
@@ -37,6 +38,11 @@ bool JoltApp::doInit() {
      * level inis will have entities? and will increment the resource counter.
      */
     JoltConsole::logInfo("Init", "Resource loading complete. Loeaded %i resources successfully.", loadedResources);
+    if(JoltZone::zoneControl.load("./res/testarea.zone") == false) {
+        return false;
+    }
+    
+    SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
     
     
     return true;

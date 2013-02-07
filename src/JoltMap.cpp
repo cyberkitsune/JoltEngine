@@ -67,6 +67,8 @@ void JoltMap::onRender(SDL_Surface* sDisplay, int mapX, int mapY) {
             int tilesetY = (tileList[ID].tileID / tilesetWidth) * TILE_SIZE;
 
             DrawMacros::doDraw(sDisplay, sTileset, tX, tY, tilesetX, tilesetY, TILE_SIZE, TILE_SIZE);
+            
+            ID++;
         }
 
 

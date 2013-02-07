@@ -22,7 +22,10 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>res/FORMAT.README</itemPath>
       <itemPath>README.md</itemPath>
+      <itemPath>res/map.map</itemPath>
+      <itemPath>res/testarea.zone</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"

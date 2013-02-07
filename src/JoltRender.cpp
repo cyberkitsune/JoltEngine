@@ -12,5 +12,7 @@ void JoltApp::onRender() {
 
         JoltEntity::entList[i]->onRender(display);
     }
+    
+    SDL_Flip(display);
 
 }
