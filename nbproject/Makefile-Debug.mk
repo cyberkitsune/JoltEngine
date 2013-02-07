@@ -45,6 +45,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/JoltAnimation.o \
 	${OBJECTDIR}/src/JoltMap.o \
 	${OBJECTDIR}/src/JoltTile.o \
+	${OBJECTDIR}/src/JoltZone.o \
 	${OBJECTDIR}/src/JoltEvent.o \
 	${OBJECTDIR}/src/JoltConsole.o \
 	${OBJECTDIR}/src/JoltEntity.o
@@ -123,6 +124,11 @@ ${OBJECTDIR}/src/JoltTile.o: src/JoltTile.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltTile.o src/JoltTile.cpp
+
+${OBJECTDIR}/src/JoltZone.o: src/JoltZone.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g `pkg-config --cflags sdl`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltZone.o src/JoltZone.cpp
 
 ${OBJECTDIR}/src/JoltEvent.o: src/JoltEvent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
