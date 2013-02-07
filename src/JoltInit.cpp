@@ -35,7 +35,8 @@ bool JoltApp::doInit() {
      * etc
      * level inis will have entities? and will increment the resource counter.
      */
-    
+    JoltDataFile test ("test.ini");
+    JoltConsole::logInfo("Init", "Test value reports %i and %s",test.getInt("aNumber"),test.getString("aString"));
     JoltConsole::logInfo("Init", "Resource loading complete. Loeaded %i resources successfully.", loadedResources);
     
     
