@@ -45,6 +45,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/JoltInit.o \
 	${OBJECTDIR}/src/JoltAnimation.o \
 	${OBJECTDIR}/src/JoltMap.o \
+	${OBJECTDIR}/src/Framerate.o \
 	${OBJECTDIR}/src/JoltTile.o \
 	${OBJECTDIR}/src/JoltZone.o \
 	${OBJECTDIR}/src/JoltEvent.o \
@@ -125,6 +126,11 @@ ${OBJECTDIR}/src/JoltMap.o: src/JoltMap.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltMap.o src/JoltMap.cpp
+
+${OBJECTDIR}/src/Framerate.o: src/Framerate.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Framerate.o src/Framerate.cpp
 
 ${OBJECTDIR}/src/JoltTile.o: src/JoltTile.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

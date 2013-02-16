@@ -25,6 +25,8 @@ public:
 public:
     bool load(char* file);
     void onRender(SDL_Surface* sDisplay, int mapX, int mapY);
+public:
+    JoltTile* getTile(int X, int Y);
 };
 
 #endif	/* JOLTMAP_H */

@@ -97,3 +97,31 @@ void JoltZone::onCleanup() {
     
     maps.clear();
 }
+
+JoltMap* JoltZone::getMap(int X, int Y) {
+    int mapWidth = MAP_WIDTH * TILE_SIZE;
+    int mapHeight = MAP_HEIGHT * TILE_SIZE;
+    
+    int ID = X / mapWidth;
+    ID = ID + ((Y / mapHeight) * areaSize);
+    
+    if(ID < 0 || ID >= maps.size()) {
+        return NULL;
+    }
+    
+    return &maps[ID];
+}
+
+JoltTile* JoltZone::getTile(int X, int Y) {
+    int mapWidth = MAP_WIDTH * TILE_SIZE;
+    int mapHeight = MAP_HEIGHT * TILE_SIZE;
+    
+    JoltMap* map = getMap(X, Y);
+    
+    if(map == NULL) return NULL;
+    
+    X = X % mapWidth;
+    Y = Y % mapHeight;
+    
+    return map->getTile(X, Y);
+}

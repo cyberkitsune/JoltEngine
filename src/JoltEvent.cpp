@@ -13,10 +13,7 @@ void JoltApp::onEvent(SDL_Event* evt) {
 
 void JoltApp::onKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode) {
     switch(sym) {
-        case SDLK_UP: JoltCamera::viewController.onMove(0, 5); break;
-        case SDLK_DOWN: JoltCamera::viewController.onMove(0, -5); break;
-        case SDLK_LEFT: JoltCamera::viewController.onMove(5, 0); break;
-        case SDLK_RIGHT: JoltCamera::viewController.onMove(-5, 0); break;
+        
     
         default: { 
             

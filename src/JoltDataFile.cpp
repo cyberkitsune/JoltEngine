@@ -30,7 +30,7 @@ string delSpaces(string &str) {
 }
 
 int JoltDataFile::getInt(const char* prop) {
-    file.seekg(0, ios::beg); //Make sure we're ready to read it from the top.
+    file.seekg(0, ios::beg); //Make sure we're ready to read it from the top+.
     //May not be the best way of doing this...
     //Example value... myValue = 5
     std::string str;

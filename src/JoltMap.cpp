@@ -71,10 +71,19 @@ void JoltMap::onRender(SDL_Surface* sDisplay, int mapX, int mapY) {
             ID++;
         }
 
-
-
     }
-
-    
+   
 }
 
+JoltTile* JoltMap::getTile(int X, int Y) {
+    int ID = 0;
+    
+    ID = X / TILE_SIZE;
+    ID = ID + (MAP_WIDTH * (Y/ TILE_SIZE));
+    
+    if(ID < 0 || ID  >= tileList.size()) {
+        return NULL;
+    }
+    
+    return &tileList[ID];
+}
