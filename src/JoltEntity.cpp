@@ -197,6 +197,37 @@ void JoltEntity::stopMove() {
     }
 }
 
+bool JoltEntity::collides(int oX, int oY, int oW, int oH) {
+    int l1, l2;
+    int r1, r2;
+    int t1, t2;
+    int b1, b2;
+    
+    int tX = (int)X + colX;
+    int tY = (int)Y + colY;
+    
+    l1 = tX;
+    l2 = oX;
+    
+    r1 = l1 + width - 1 - colWide;
+    r2 = oX + oW - 1;
+    
+    t1 = tY;
+    t2 = oY;
+    
+    b1 = t1 + height - 1 - colTall;
+    b2 = oY + oH - 1;
+    
+    if(b1 < t2) return false;
+    if(t1 > b2) return false;
+    
+    if(r1 < l2) return false;
+    if(l1 > r2) return false;
+    
+    return true;
+    
+}
+
 bool JoltEntity::posValid(int newX, int newY) {
     bool ret = true;
     
