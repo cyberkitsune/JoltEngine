@@ -10,15 +10,29 @@
 DrawMacros::DrawMacros() {
 }
 
-SDL_Surface* DrawMacros::loadImage(char* file) { //TODO: Work on this
+//SDL_Surface* DrawMacros::loadImage(char* file) { //TODO: Work on this
+//    SDL_Surface* sTemp = NULL;
+//    SDL_Surface* sReturn = NULL;
+//    
+//    if((sTemp = SDL_LoadBMP(file)) == NULL) {
+//        return NULL;
+//    }
+//    
+//    sReturn = SDL_DisplayFormat(sTemp);
+//    SDL_FreeSurface(sTemp);
+//    
+//    return sReturn;
+//}
+
+SDL_Surface* DrawMacros::loadImage(char* file) {
     SDL_Surface* sTemp = NULL;
     SDL_Surface* sReturn = NULL;
     
-    if((sTemp = SDL_LoadBMP(file)) == NULL) {
+    if((sTemp = IMG_Load(file)) == NULL) {
         return NULL;
     }
     
-    sReturn = SDL_DisplayFormat(sTemp);
+    sReturn = SDL_DisplayFormatAlpha(sTemp);
     SDL_FreeSurface(sTemp);
     
     return sReturn;

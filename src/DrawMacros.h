@@ -9,6 +9,8 @@
 #define	DRAWMACROS_H
 
 #include "SDLStuff.h"
+#include <SDL/SDL_image.h>
+
 
 class DrawMacros {
 public:

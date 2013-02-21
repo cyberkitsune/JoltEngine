@@ -217,7 +217,7 @@ bool JoltEntity::collides(int oX, int oY, int oW, int oH) {
     
     b1 = t1 + height - 1 - colTall;
     b2 = oY + oH - 1;
-    
+   
     if(b1 < t2) return false;
     if(t1 > b2) return false;
     

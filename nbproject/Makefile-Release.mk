@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/JoltLoop.o \
 	${OBJECTDIR}/src/JoltCleanup.o \
 	${OBJECTDIR}/src/DrawMacros.o \
+	${OBJECTDIR}/src/JoltPlayer.o \
 	${OBJECTDIR}/src/JoltDataFile.o \
 	${OBJECTDIR}/src/JoltApp.o \
 	${OBJECTDIR}/src/JoltInit.o \
@@ -101,6 +102,11 @@ ${OBJECTDIR}/src/DrawMacros.o: src/DrawMacros.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/DrawMacros.o src/DrawMacros.cpp
+
+${OBJECTDIR}/src/JoltPlayer.o: src/JoltPlayer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltPlayer.o src/JoltPlayer.cpp
 
 ${OBJECTDIR}/src/JoltDataFile.o: src/JoltDataFile.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

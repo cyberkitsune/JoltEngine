@@ -15,6 +15,7 @@
       <itemPath>src/JoltConsole.h</itemPath>
       <itemPath>src/JoltDataFile.h</itemPath>
       <itemPath>src/JoltMap.h</itemPath>
+      <itemPath>src/JoltPlayer.h</itemPath>
       <itemPath>src/JoltTile.h</itemPath>
       <itemPath>src/JoltZone.h</itemPath>
       <itemPath>src/SDLStuff.h</itemPath>
@@ -47,6 +48,7 @@
       <itemPath>src/JoltInit.cpp</itemPath>
       <itemPath>src/JoltLoop.cpp</itemPath>
       <itemPath>src/JoltMap.cpp</itemPath>
+      <itemPath>src/JoltPlayer.cpp</itemPath>
       <itemPath>src/JoltTile.cpp</itemPath>
       <itemPath>src/JoltZone.cpp</itemPath>
     </logicalFolder>
@@ -73,6 +75,7 @@
         <linkerTool>
           <linkerLibItems>
             <linkerOptionItem>`pkg-config --libs sdl`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs SDL_image`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

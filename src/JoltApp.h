@@ -10,8 +10,12 @@
 
 #include "SDLStuff.h"
 #include "JoltEntity.h"
+#include "JoltPlayer.h"
 
 class JoltApp {
+public:
+    JoltPlayer p1;
+    JoltPlayer p2;
 public:
     JoltApp();
     int doExecute();
