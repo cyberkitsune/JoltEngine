@@ -54,7 +54,7 @@ public:
 protected:
     float velX;
     float velY;
-    
+    bool canJump;
     float accelX;
     float accelY;
 public:
@@ -78,10 +78,11 @@ public:
     virtual void onRender(SDL_Surface* display);
     virtual void onCleanup();
     virtual void onAnimate();
-    virtual void onCollision(JoltEntity* ent);
+    virtual bool onCollision(JoltEntity* ent);
 public:
     void onMove(float movX, float movY);
     void stopMove();
+    bool jump();
 public:
     bool collides(int oX, int oY, int oW, int oH);
 private:

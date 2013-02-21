@@ -44,6 +44,7 @@
       <itemPath>src/JoltCleanup.cpp</itemPath>
       <itemPath>src/JoltConsole.cpp</itemPath>
       <itemPath>src/JoltDataFile.cpp</itemPath>
+      <itemPath>src/JoltEntityCol.cpp</itemPath>
       <itemPath>src/JoltEvent.cpp</itemPath>
       <itemPath>src/JoltInit.cpp</itemPath>
       <itemPath>src/JoltLoop.cpp</itemPath>

@@ -19,7 +19,7 @@ public:
     void onRender(SDL_Surface* sDisp);
     void onCleanup();
     void onAnimate();
-    void onCollision(JoltEntity* ent);
+    bool onCollision(JoltEntity* ent);
 
 };
 

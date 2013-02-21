@@ -9,15 +9,9 @@
 #include "Framerate.h"
 #include "JoltCamera.h"
 #include "JoltZone.h"
+#include "JoltConsole.h"
 
 std::vector<JoltEntity*> JoltEntity::entList;
-
-std::vector<JoltEntityCol> JoltEntityCol::entColList;
-
-JoltEntityCol::JoltEntityCol() {
-    entA = NULL;
-    entB = NULL;
-}
 
 JoltEntity::JoltEntity() {
     
@@ -38,8 +32,8 @@ JoltEntity::JoltEntity() {
     accelX = 0;
     accelY = 0;
     
-    maxVelX = 5;
-    maxVelY = 5;
+    maxVelX = 10;
+    maxVelY = 10;
     
     curFrameCol = 0;
     curFrameRow = 0;
@@ -49,6 +43,8 @@ JoltEntity::JoltEntity() {
     
     colWide = 0;
     colTall = 0;
+    
+    canJump = false;
     
 }
 
@@ -123,11 +119,13 @@ void JoltEntity::onAnimate() {
     animationControl.doAnimate();
 }
 
-void JoltEntity::onCollision(JoltEntity* ent) {
+bool JoltEntity::onCollision(JoltEntity* ent) {
 }
 
 void JoltEntity::onMove(float movX, float movY) {
     if(movX == 0 && movY == 0) return;
+    
+    //JoltConsole::logInfo("Info","An entity is moving.");
     
     double newX = 0;
     double newY = 0;
@@ -146,40 +144,53 @@ void JoltEntity::onMove(float movX, float movY) {
     }
     
     while(true) {
-        if(flags & ENTITY_FLAG_GHOST) {
-            posValid((int)(X + newX), (int)(Y + newY)); // We don't care about ghost collisions, but we need to send the event to other entities.
-            
-            X += newX;
-            Y += newY;
-        } else {
-            if(posValid((int)(X + newX), (int)(Y))) {
-                X += newY;
-            } else {
-                velX = 0;
-            }
-            
-            if(posValid((int)(X), (int)(Y + newY))) {
-                Y += newY;
-            } else {
-                velY = 0;
-            }
-        }
-        
-        velX += -newX;
-        velY += -newY;
-        
-        if(newX > 0 && movX <= 0) newX = 0;
-        if(newX < 0 && movX >= 0) newX = 0;
-        
-        if(newY > 0 && movY <= 0) newY = 0;
-        if(newY < 0 && movY >= 0) newY = 0;
-        
-        if(movX == 0) newX = 0;
-        if(movY == 0) newY = 0;
-        
-        if(movX == 0 && movY == 0) break;
-        if(newX == 0 && newY == 0) break;
-    }   
+		if(flags & ENTITY_FLAG_GHOST) {
+			posValid((int)(X + newX), (int)(Y + newY)); //We don't care about collisions, but we need to send events to other entities
+
+			X += newX;
+			Y += newY;
+		}else{
+			if(posValid((int)(X + newX), (int)(Y))) {
+				X += newX;
+			}else{
+				velX = 0;
+			}
+
+			if(posValid((int)(X), (int)(Y + newY))) {
+				Y += newY;
+			}else{
+                if(movY > 0) {
+                    canJump = true;
+                }
+
+				velY = 0;
+			}
+		}
+
+		movX += -newX;
+		movY += -newY;
+
+		if(newX > 0 && movX <= 0) newX = 0;
+		if(newX < 0 && movX >= 0) newX = 0;
+
+		if(newY > 0 && movY <= 0) newY = 0;
+		if(newY < 0 && movY >= 0) newY = 0;
+
+		if(movX == 0) newX = 0;
+		if(movY == 0) newY = 0;
+
+		if(movX == 0 && movY 	== 0) 	break;
+		if(newX  == 0 && newY 	== 0) 	break;
+	}   
+}
+
+bool JoltEntity::jump() {
+    if(!canJump) return false;
+    JoltConsole::logInfo("Jump","Tried to jump!");
+    
+    velY = 50;
+    
+    return true;
 }
 
 void JoltEntity::stopMove() {
@@ -260,11 +271,12 @@ bool JoltEntity::posValid(int newX, int newY) {
 }
 
 bool JoltEntity::posValidTile(JoltTile* tile) {
+
     if(tile == NULL) {
-        return true;
+        return false;
     }
     
-    if(tile->tileID == TILE_TYPE_BLOCK) {
+    if(tile->typeID == TILE_TYPE_BLOCK) {
         return false;
     }
     
@@ -287,3 +299,4 @@ bool JoltEntity::posValidEnt(JoltEntity* ent, int newX, int newY) {
     
     return true;
 }
+

@@ -3,7 +3,9 @@
 #include "JoltDataFile.h"
 #include "defines.h"
 #include "JoltZone.h"
+#include "JoltCamera.h"
 #include <stdlib.h>
+#include <vector>
 
 /**
  * Init Script
@@ -43,8 +45,26 @@ bool JoltApp::doInit() {
         return false;
     }
     
-    SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
+    //SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
     
+    JoltConsole::logInfo("Init","Loading players.");
+    if(p1.loadEnt("./res/yoshi.png", 64, 64, 8) == false) {
+        return false;
+    }
+    
+    if(p2.loadEnt("./res/yoshi.png", 64, 64, 8) == false) {
+        return false;
+    }
+    
+    p2.X = 100;
+    
+    JoltEntity::entList.push_back(&p1);
+    JoltEntity::entList.push_back(&p2);
+    
+    // Set camera
+    JoltCamera::viewController.tMode = TARGET_MODE_CENTER;
+    JoltCamera::viewController.setTarget(&p1.X,&p1.Y); // C++ is magic. When X and Y get modified in another class/scope, they change
+                                                       // in JoltCamera too due to pointers. Woo!
     
     return true;
 }

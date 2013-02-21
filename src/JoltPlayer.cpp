@@ -39,6 +39,6 @@ void JoltPlayer::onAnimate() {
     JoltEntity::onAnimate();
 }
 
-void JoltPlayer::onCollision(JoltEntity* ent) {
+bool JoltPlayer::onCollision(JoltEntity* ent) {
     
 }

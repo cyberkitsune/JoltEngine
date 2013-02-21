@@ -23,7 +23,7 @@ void JoltCamera::onMove(int movX, int movY) {
     y += movY;
 }
 
-int JoltCamera::getX() {
+float JoltCamera::getX() {
     if(targetX != NULL) {
         if(tMode == TARGET_MODE_CENTER) {
             return *targetX - (WWIDTH / 2);
@@ -35,7 +35,7 @@ int JoltCamera::getX() {
     
 }
 
-int JoltCamera::getY() {
+float JoltCamera::getY() {
     if(targetY != NULL) {
         if(tMode == TARGET_MODE_CENTER) {
             return *targetY - (WHEIGHT / 2);
@@ -47,12 +47,12 @@ int JoltCamera::getY() {
     
 }
 
-void JoltCamera::setPos(int x, int y) {
+void JoltCamera::setPos(float x, float y) {
     this->x = x;
     this->y = y;
 }
 
-void JoltCamera::setTarget(int* x, int* y) {
+void JoltCamera::setTarget(float* x, float* y) {
     targetX = x;
     targetY = y;
 }

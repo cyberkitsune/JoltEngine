@@ -30,6 +30,7 @@ public:
     void doCleanup();
 public:
     virtual void onKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
+    virtual void onKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);
 };
 
 #endif	/* JOLTAPP_H */

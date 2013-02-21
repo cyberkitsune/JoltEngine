@@ -30,8 +30,7 @@ int JoltApp::doExecute() {
         
         onLoop();
         onRender();
-        
-        //TODO: Simple framerate stuff.
+        //JoltConsole::logInfo("Main","Loop called at %i", SDL_GetTicks());
     }
     
     doCleanup();

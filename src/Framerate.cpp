@@ -22,7 +22,7 @@ Framerate::Framerate() {
 }
 
 void Framerate::onLoop() {
-    if(oldTime + 1000 < SDL_GetTicks()) {
+    if((oldTime + 1000) < SDL_GetTicks()) {
         oldTime = SDL_GetTicks();
         numFrames = frames;
         frames = 0;

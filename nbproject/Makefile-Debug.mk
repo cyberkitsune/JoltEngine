@@ -45,6 +45,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/JoltApp.o \
 	${OBJECTDIR}/src/JoltInit.o \
 	${OBJECTDIR}/src/JoltAnimation.o \
+	${OBJECTDIR}/src/JoltEntityCol.o \
 	${OBJECTDIR}/src/JoltMap.o \
 	${OBJECTDIR}/src/Framerate.o \
 	${OBJECTDIR}/src/JoltTile.o \
@@ -127,6 +128,11 @@ ${OBJECTDIR}/src/JoltAnimation.o: src/JoltAnimation.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g `pkg-config --cflags sdl` `pkg-config --cflags SDL_image`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltAnimation.o src/JoltAnimation.cpp
+
+${OBJECTDIR}/src/JoltEntityCol.o: src/JoltEntityCol.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g `pkg-config --cflags sdl` `pkg-config --cflags SDL_image`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/JoltEntityCol.o src/JoltEntityCol.cpp
 
 ${OBJECTDIR}/src/JoltMap.o: src/JoltMap.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

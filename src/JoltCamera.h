@@ -20,11 +20,11 @@ class JoltCamera {
 public:
     static JoltCamera viewController; // Who wouldn't want this static? ;3
 private:
-    int x;
-    int y;
+    float x;
+    float y;
     // Ohnoes pointers incoming
-    int* targetX;
-    int* targetY;
+    float* targetX;
+    float* targetY;
     
 public:
     int tMode;
@@ -36,12 +36,12 @@ public:
     void onMove(int movX, int movY);
     
 public:
-    int getX();
-    int getY();
+    float getX();
+    float getY();
     
 public:
-    void setPos(int x, int y);
-    void setTarget(int* x, int* y);
+    void setPos(float x, float y);
+    void setTarget(float* x, float* y);
 };
 
 #endif	/* JOLTCAMERA_H */
