@@ -32,7 +32,11 @@ SDL_Surface* DrawMacros::loadImage(char* file) {
         return NULL;
     }
     
-    sReturn = SDL_DisplayFormatAlpha(sTemp);
+    if(sTemp->format->Amask) {
+        sReturn = SDL_DisplayFormatAlpha(sTemp);
+    } else {
+        sReturn = SDL_DisplayFormat(sTemp);
+    }
     SDL_FreeSurface(sTemp);
     
     return sReturn;

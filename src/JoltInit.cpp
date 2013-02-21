@@ -24,9 +24,9 @@ bool JoltApp::doInit() {
     JoltConsole::logInfo("Init", "Screen initilized.");
     SDL_WM_SetCaption("A Jolt Engine Application",NULL);
     
-    int numResources = 0;
-    JoltConsole::logInfo("Init", "Begin resource loading. Going to load %i resources", numResources);
-    int loadedResources = 0;
+    //int numResources = 0;
+    //JoltConsole::logInfo("Init", "Begin resource loading. Going to load %i resources", numResources);
+    //int loadedResources = 0;
     
     /*
      * Here we'll do resource discovery, prolly via a global resources.ini
@@ -37,8 +37,9 @@ bool JoltApp::doInit() {
      * etc
      * level inis will have entities? and will increment the resource counter.
      */
-    JoltConsole::logInfo("Init", "Resource loading complete. Loeaded %i resources successfully.", loadedResources);
+    //JoltConsole::logInfo("Init", "Resource loading complete. Loeaded %i resources successfully.", loadedResources);
     if(JoltZone::zoneControl.load("./res/testarea.zone") == false) {
+        JoltConsole::logInfo("Init", "Unable to load test zone!");
         return false;
     }
     
