@@ -100,7 +100,7 @@ void JoltEntity::onLoop() {
 void JoltEntity::onRender(SDL_Surface* display) {
     if( sEntity == NULL || display == NULL) return;
     
-    DrawMacros::doDraw(display, sEntity, X - JoltCamera::viewController.getX(), Y - JoltCamera::viewController.getY(), curFrameCol * width, (curFrameRow * animationControl.getCurrentFrame()) * height, width, height);
+    DrawMacros::doDraw(display, sEntity, X - JoltCamera::viewController.getX(), Y - JoltCamera::viewController.getY(), curFrameCol * width, ((curFrameRow+1) * animationControl.getCurrentFrame()) * height, width, height);
 }
 
 void JoltEntity::onCleanup() {
