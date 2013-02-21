@@ -45,7 +45,7 @@ bool JoltApp::doInit() {
         return false;
     }
     
-    //SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
+    SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
     
     JoltConsole::logInfo("Init","Loading players.");
     if(p1.loadEnt("./res/yoshi.png", 64, 64, 8) == false) {
@@ -56,6 +56,7 @@ bool JoltApp::doInit() {
         return false;
     }
     
+    p1.X = 20;
     p2.X = 100;
     
     JoltEntity::entList.push_back(&p1);

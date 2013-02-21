@@ -40,5 +40,7 @@ void JoltPlayer::onAnimate() {
 }
 
 bool JoltPlayer::onCollision(JoltEntity* ent) {
+    jump();
     
+    return true;
 }

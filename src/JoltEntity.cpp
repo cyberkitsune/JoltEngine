@@ -91,6 +91,8 @@ void JoltEntity::onLoop() {
     if(velY > maxVelY) velY = maxVelY; // Clamp faster speed.
     if(velY < -maxVelY) velY = -maxVelY;
     
+    
+    
     onAnimate();
     onMove(velX, velY);
     
@@ -120,6 +122,7 @@ void JoltEntity::onAnimate() {
 }
 
 bool JoltEntity::onCollision(JoltEntity* ent) {
+    return true;
 }
 
 void JoltEntity::onMove(float movX, float movY) {
@@ -139,7 +142,7 @@ void JoltEntity::onMove(float movX, float movY) {
     }
     
     if(movY != 0) {
-        if(movY != 0)   newY = Framerate::fcontrol.getSpeedFactor();
+        if(movY >= 0)   newY = Framerate::fcontrol.getSpeedFactor();
         else            newY = -Framerate::fcontrol.getSpeedFactor();
     }
     
@@ -186,9 +189,9 @@ void JoltEntity::onMove(float movX, float movY) {
 
 bool JoltEntity::jump() {
     if(!canJump) return false;
-    JoltConsole::logInfo("Jump","Tried to jump!");
     
-    velY = 50;
+    velY = -maxVelY; 
+    canJump = false;
     
     return true;
 }

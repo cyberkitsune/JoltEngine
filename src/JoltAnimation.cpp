@@ -6,6 +6,7 @@
  */
 
 #include "JoltAnimation.h"
+#include "JoltConsole.h"
 
 JoltAnimation::JoltAnimation() {
     currentFrame = 0;
@@ -20,26 +21,26 @@ JoltAnimation::JoltAnimation() {
 }
 
 void JoltAnimation::doAnimate() {
-    if(oldTime + frameRate > SDL_GetTicks()) {
-        return; // We aren't ready to go to the next frame, so nothing should happen.
+ if(oldTime + frameRate > SDL_GetTicks()) {
+        return;
     }
-    
+
     oldTime = SDL_GetTicks();
-    
+
     currentFrame += frameInc;
-    
+
     if(osc) {
         if(frameInc > 0) {
-            if(currentFrame >= maxFrames) {
+            if(currentFrame >= maxFrames - 1) {
                 frameInc = -frameInc;
             }
-        } else {
+        }else{
             if(currentFrame <= 0) {
                 frameInc = -frameInc;
             }
         }
-    } else {
-        if(currentFrame >= maxFrames) {
+    }else{
+        if(currentFrame >= maxFrames - 1) {
             currentFrame = 0;
         }
     }
