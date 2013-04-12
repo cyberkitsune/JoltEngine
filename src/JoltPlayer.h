@@ -1,6 +1,6 @@
 /* 
  * File:   JoltPlayer.h
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  *
  * Created on February 20, 2013, 5:33 PM
  */

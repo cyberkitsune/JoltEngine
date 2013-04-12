@@ -1,6 +1,6 @@
 /* 
  * File:   DrawMacros.cpp
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  * 
  * Created on February 5, 2013, 4:52 PM
  */

@@ -1,6 +1,6 @@
 /* 
  * File:   JoltApp.h
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  *
  * Created on February 4, 2013, 7:13 PM
  */

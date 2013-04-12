@@ -1,6 +1,6 @@
 /* 
  * File:   SDLStuff.h
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  *
  * Created on February 4, 2013, 7:18 PM
  */

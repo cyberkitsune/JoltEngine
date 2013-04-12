@@ -1,6 +1,6 @@
 /* 
  * File:   defines.h
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  *
  * Temporary Defines
  */

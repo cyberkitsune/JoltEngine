@@ -1,6 +1,6 @@
 /* 
  * File:   JoltZone.h
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  *
  * Created on February 6, 2013, 8:12 PM
  */

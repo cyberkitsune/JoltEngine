@@ -1,6 +1,6 @@
 /* 
  * File:   Framerate.h
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  *
  * Created on February 13, 2013, 7:18 PM
  */

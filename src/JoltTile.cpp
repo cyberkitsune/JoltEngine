@@ -1,6 +1,6 @@
 /* 
  * File:   JoltTile.cpp
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  * 
  * Created on February 6, 2013, 7:38 PM
  */

@@ -1,6 +1,6 @@
 /* 
  * File:   JoltDataFile.h
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  *
  * Created on February 4, 2013, 9:20 PM
  */

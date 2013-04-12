@@ -1,6 +1,6 @@
 /* 
  * File:   JoltEntityCol.cpp
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  * 
  * Created on February 20, 2013, 6:25 PM
  */

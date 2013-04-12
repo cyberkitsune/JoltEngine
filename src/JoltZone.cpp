@@ -1,6 +1,6 @@
 /* 
  * File:   JoltZone.cpp
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  * 
  * So this one needs some explaining...
  * 

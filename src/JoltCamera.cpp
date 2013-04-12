@@ -1,6 +1,6 @@
 /* 
  * File:   JoltCamera.cpp
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  * 
  * Created on February 6, 2013, 8:38 PM
  */

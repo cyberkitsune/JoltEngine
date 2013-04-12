@@ -1,6 +1,6 @@
 /* 
  * File:   JoltEntity.h
- * Author: cyberkitsune
+ * Author: Sean McClenaghan
  *
  * Created on February 5, 2013, 5:15 PM
  */
